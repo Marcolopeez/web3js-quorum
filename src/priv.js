@@ -349,6 +349,10 @@ function Priv(web3) {
     if (options.privacyGroupId) {
       tx.privacyGroupId = options.privacyGroupId;
     }
+    if (options.extendedPrivacy) {
+      tx.extendedPrivacy = options.extendedPrivacy;
+      tx.applyExtendedPrivacyIfPresent();
+    }
     tx.restriction = options.restriction || "restricted";
 
     tx.sign(privateKeyBuffer);
